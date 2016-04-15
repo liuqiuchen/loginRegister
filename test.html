@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<form id="demoForm">
+    <fieldset>
+        <legend>用户登录</legend>
+        <p>
+            <label for="username" style="display: inline-block;width: 80px;">用户名:</label>
+            <input type="text" name="username" id="username"/>
+        </p>
+        <p>
+            <label for="password" style="display: inline-block;width: 80px;">密码:</label>
+            <input type="password" name="password" id="password"/>
+        </p>
+        <p>
+            <input type="submit"/>
+        </p>
+        <p>
+            <button id="check">检查</button>
+        </p>
+    </fieldset>
+</form>
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+<script>
+    var validator;
+
+    $(function () {
+        validator = $('#demoForm').validate({
+            //点击提交按钮不提交
+            debug: true,
+            rules: {
+                username: {
+                    required: true,
+                    /*minlength:2,
+                     maxlength:10,*/
+                    rangelength: [2, 10],
+                    remote:'remote.json'
+                },
+                password: {
+                    required:true,
+                    minlength:2,
+                    maxlength:16
+                }
+            },
+            messages: {
+                username: {
+                    required: '必须填写用户名',
+                    rangelength: '2到10位'
+                },
+                password: {
+                    required:'必须填写密码',
+                    minlength: '不低于2位',
+                    maxlength: '不低于16位'
+                }
+            },
+            submitHandler: function (form) {
+                console.log($(form).serialize());
+            },
+            invalidHandler: function (event, validator) {
+                console.log('错误数：' + validator.numberOfInvalids());
+            }
+        });
+
+        $('#check').click(function () {
+            console.log($('#demoForm').valid() ? '表单填写正确' : '表单填写错误');
+        });
+    });
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+{
+  "name": "loginRegister",
+  "authors": [
+    "lqc"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^2.2.3",
+    "jquery-validation": "jquery-validate#^1.15.0"
+  }
+}

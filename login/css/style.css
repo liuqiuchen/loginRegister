@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 14px;
+    font-family: 'Microsoft Yahei';
+}
+
+body {
+    background: #FFFFFF;
+}
+
+#login {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 150px auto auto auto;
+    width: 900px;
+    height: 504px;
+    background: url("../images/bg.png") no-repeat center center;
+}
+
+#login .login_alpha {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 610px;
+    height: 362px;
+    margin: -181px -305px;
+    background: #FFFFFF;
+    opacity: .1;
+    /*兼容ie7、ie8*/
+    filter: alpha(opacity=10);
+}
+
+#login .login_wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 610px;
+    height: 362px;
+    margin: -181px -305px;
+}
+
+#login .purple_bar {
+    width: 100%;
+    height: 6px;
+    background: #745ec5;
+}
+
+#login .err_info {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #eb4f38;
+    background: #FFFFFF;
+}
+#login .err_text,
+#login .err_close {
+    margin: 0 10px;
+}
+
+#login .err_text {
+    float: left;
+}
+
+#login .err_close {
+    float: right;
+    margin-top: 3px;
+}
+
+#login .head {
+    clear: both;
+    margin: 73px 0 0 36px;
+    width: 118px;
+    height: 118px;
+    background: url("../images/head.jpg") no-repeat center center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
