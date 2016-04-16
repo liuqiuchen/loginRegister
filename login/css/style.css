@@ -81,7 +81,88 @@ body {
     -moz-border-radius: 50%;
     border-radius: 50%;
     border: 2px solid #FFFFFF;
+    float: left;
 }
+
+#login .divider {
+    width: 2px;
+    height: 260px;
+    background: #FFFFFF;
+    float: left;
+    margin: 28px 0 0 36px;
+}
+
+#myForm {
+    float: left;
+    margin: 35px 0 0 96px;
+    width: 225px;
+}
+
+#myForm label {
+    display: block;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+#myForm .import {
+    width: 225px;
+    height: 35px;
+    line-height: 35px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-indent: 10px;
+}
+
+#myForm .password_w {
+    margin-top: 22px;
+}
+
+#myForm .extra {
+    margin-top: 20px;
+    width: 100%;
+    height: 20px;
+}
+
+#myForm .extra_l {
+    float: left;
+}
+
+#myForm .extra_l a,
+#myForm .extra_l a:hover {
+    color: #9d85f6;
+    text-decoration: underline;
+}
+
+#myForm .extra_r {
+    float: right;
+    color: #333333;
+}
+
+#submit {
+    width: 225px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #745ec5;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
