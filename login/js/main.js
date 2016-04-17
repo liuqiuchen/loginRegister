@@ -1,0 +1,115 @@
+$(function () {
+	var login = $('#login');
+	var submitBtn = $('#submit');
+	var errInfo = $('.err_info');
+	var form = $('#myForm');
+	var validator = null;
+
+	// IE7浏览器兼容
+	//除了IE7以外的高版本浏览器
+	if(submitBtn.get(0).hasAttribute != undefined) {
+		//other
+		validator = form.validate({
+			//debug: true,
+
+			rules: {
+				username: {
+					required: true,
+					minlength: 2,
+					maxlength: 10
+				},
+				pass: {
+					required: true,
+					rangelength: [6, 18]
+				}
+
+			},
+
+			messages: {
+				username: {
+					required: '登录用户名不得为空',
+					minlength: '用户名最少为两位',
+					maxlength: '用户名最多为十位'
+				},
+				pass: {
+					required: '请填写登录密码',
+					rangelength: '登录密码在6~18位'
+				}
+
+			},
+
+			errorPlacement: function (error, element) {
+				//console.log(error);
+				errInfo.find('.err_constant').html(error);
+
+			}
+		});
+	}
+
+
+	submitBtn.on('click', function () {
+
+		// IE7浏览器兼容
+		if(submitBtn.get(0).hasAttribute == undefined) {
+			// ie7
+			//传统简易验证
+			//alert('ie7');
+			var userName = $('#username');
+			var password = $('#pass');
+
+			//alert($.trim(userName.val()));
+			if($.trim(userName.val()) == '' || $.trim(userName.val()) == null) {
+				alert('请填写用户名');
+			}else {
+				if($.trim(password.val()) == '' || $.trim(password.val()) == null) {
+					alert('请填写密码');
+				}else {
+					//验证通过
+					document.getElementById('myForm').submit();
+				}
+			}
+
+		}else {
+			// other browser
+			form.submit();
+			//表单无效的特效提示
+			if(validator.form() == false) {
+				//console.log('表单验证未成功，请用户查看表单上方的提示信息');
+				errInfo.fadeOut('fast').fadeIn('fast');
+			}
+		}
+
+	});
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -54,8 +54,15 @@ body {
     width: 100%;
     height: 30px;
     line-height: 30px;
-    color: #eb4f38;
+    /*color: #eb4f38;*/
+    color: #666666;
     background: #FFFFFF;
+}
+#login span.fixed_text {
+    color: #b0b0b0;
+}
+#login span.err_constant {
+    color: #eb4f38;
 }
 #login .err_text,
 #login .err_close {
@@ -89,12 +96,12 @@ body {
     height: 260px;
     background: #FFFFFF;
     float: left;
-    margin: 28px 0 0 36px;
+    margin: 20px 0 0 36px;
 }
 
 #myForm {
     float: left;
-    margin: 35px 0 0 96px;
+    margin: 25px 0 0 96px;
     width: 225px;
 }
 
@@ -152,8 +159,11 @@ body {
     margin-top: 20px;
 }
 
-
-
+#footer {
+    text-align: center;
+    color: #cccccc;
+    margin-top: 20px;
+}
 
 
 
