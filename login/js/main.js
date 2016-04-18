@@ -4,13 +4,19 @@ $(function () {
 	var errInfo = $('.err_info');
 	var form = $('#myForm');
 	var validator = null;
+	var _errArr = [];
+	var _errHtml = '';
 
 	// IE7浏览器兼容
 	//除了IE7以外的高版本浏览器
 	if(submitBtn.get(0).hasAttribute != undefined) {
+
 		//other
 		validator = form.validate({
 			//debug: true,
+
+			onkeyup: false,
+			onfocusout: false,
 
 			rules: {
 				username: {
@@ -27,7 +33,7 @@ $(function () {
 
 			messages: {
 				username: {
-					required: '登录用户名不得为空',
+					required: '用户名不得为空',
 					minlength: '用户名最少为两位',
 					maxlength: '用户名最多为十位'
 				},
@@ -40,7 +46,36 @@ $(function () {
 
 			errorPlacement: function (error, element) {
 				//console.log(error);
-				errInfo.find('.err_constant').html(error);
+
+				//当输入框失去焦点的时候，清空一下错误提示数组
+				$('#username').on('focusout', function () {
+					_errArr = [];
+				});
+
+				$('#pass').on('focusout', function () {
+					_errArr = [];
+				});
+
+				_errArr.push(error[0].innerHTML);
+
+				//数组去除重复的元素
+				//定义一个空数组
+				var _newErrArr = [];
+
+				for(var i = 0;i < _errArr.length;i++) {
+					//不存在的时候才push进去
+					if(_newErrArr.indexOf(_errArr[i]) == -1) {
+						_newErrArr.push(_errArr[i]);
+					}
+				}
+				/*console.log( _newErrArr);
+
+				console.log( _newErrArr.length);
+				console.log(_newErrArr.join(','));*/
+
+				_errHtml =  _newErrArr.join(',');
+				//console.log(_errHtml);
+				errInfo.find('.err_constant').html(_errHtml);
 
 			}
 		});
