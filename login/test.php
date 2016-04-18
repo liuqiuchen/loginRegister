@@ -1,8 +1,7 @@
 <?php
 
-$_GET['username'];
-$_GET['pass'];
-
+$username = $_GET['username'];
+$pass = $_GET['pass'];
 
 
 

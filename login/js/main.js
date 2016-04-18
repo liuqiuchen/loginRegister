@@ -92,24 +92,25 @@ $(function () {
 		var username = $.trim(_importUser.val());
 		var pass = $.trim(_importPass.val());
 
-		/*alert(username);
-		alert(pass);*/
+		//alert(username);
+		//alert(pass);
+        //alert(location.pathname);
 
 		$.ajax({
-			url: '../test.php',
+			url: location.pathname + 'test.php',
 			type: 'GET',
 			data: {username: username, password:pass},
 			error: function (xhr, errText) {
-				alert('错误');
+				//alert('错误');
 				console.log('错误：' + errText);
 			},
 			success: function (data) {
-				alert('成功');
-				alert(data);
+				alert('提交成功');
+				//alert(data);
 			}
 		});
 
-		alert('测试');
+		//alert('测试');
 	}
 
 
