@@ -65,21 +65,52 @@ $(function () {
 					alert('请填写密码');
 				}else {
 					//验证通过
+					ajaxForm();
 					document.getElementById('myForm').submit();
 				}
 			}
 
 		}else {
 			// other browser
-			form.submit();
 			//表单无效的特效提示
 			if(validator.form() == false) {
 				//console.log('表单验证未成功，请用户查看表单上方的提示信息');
 				errInfo.fadeOut('fast').fadeIn('fast');
+			}else {
+				ajaxForm();
+				form.submit();
 			}
+
 		}
 
 	});
+
+	// 在JS中，函数和变量都会自动提升
+	function ajaxForm() {
+		var _importUser = $('input#username');
+		var _importPass = $('input#pass');
+		var username = $.trim(_importUser.val());
+		var pass = $.trim(_importPass.val());
+
+		/*alert(username);
+		alert(pass);*/
+
+		$.ajax({
+			url: '../test.php',
+			type: 'GET',
+			data: {username: username, password:pass},
+			error: function (xhr, errText) {
+				alert('错误');
+				console.log('错误：' + errText);
+			},
+			success: function (data) {
+				alert('成功');
+				alert(data);
+			}
+		});
+
+		alert('测试');
+	}
 
 
 });
