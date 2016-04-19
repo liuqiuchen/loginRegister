@@ -61,19 +61,33 @@ $(function () {
 				//数组去除重复的元素
 				//定义一个空数组
 				var _newErrArr = [];
+				var _newErrArr2 = [];
 
-				for(var i = 0;i < _errArr.length;i++) {
+				/*for(var i = 0;i < _errArr.length;i++) {
 					//不存在的时候才push进去
 					if(_newErrArr.indexOf(_errArr[i]) == -1) {
 						_newErrArr.push(_errArr[i]);
 					}
+				}*/
+
+				//兼容高版本浏览器以及ie8通用的数组去重
+				for(var n in _errArr) {
+					//数组键值互调
+					_newErrArr[_errArr[n]] = n;
 				}
-				/*console.log( _newErrArr);
+
+				var i = 0;
+				for(var n2 in _newErrArr) {
+					_newErrArr2[i] = n2;
+					i++;
+				}
+
+				/*console.log( _newErrArr2);
 
 				console.log( _newErrArr.length);
 				console.log(_newErrArr.join(','));*/
 
-				_errHtml =  _newErrArr.join(',');
+				_errHtml =  _newErrArr2.join(',');
 				//console.log(_errHtml);
 				errInfo.find('.err_constant').html(_errHtml);
 
@@ -136,7 +150,7 @@ $(function () {
 			type: 'GET',
 			data: {username: username, password:pass},
 			error: function (xhr, errText) {
-				//alert('错误');
+				alert('错误');
 				console.log('错误：' + errText);
 			},
 			success: function (data) {
