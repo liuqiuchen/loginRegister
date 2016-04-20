@@ -64,11 +64,11 @@ $(function () {
 				var _newErrArr2 = [];
 
 				/*for(var i = 0;i < _errArr.length;i++) {
-					//不存在的时候才push进去
-					if(_newErrArr.indexOf(_errArr[i]) == -1) {
-						_newErrArr.push(_errArr[i]);
-					}
-				}*/
+				 //不存在的时候才push进去
+				 if(_newErrArr.indexOf(_errArr[i]) == -1) {
+				 _newErrArr.push(_errArr[i]);
+				 }
+				 }*/
 
 				//兼容高版本浏览器以及ie8通用的数组去重
 				for(var n in _errArr) {
@@ -83,9 +83,8 @@ $(function () {
 				}
 
 				/*console.log( _newErrArr2);
-
-				console.log( _newErrArr.length);
-				console.log(_newErrArr.join(','));*/
+				 console.log( _newErrArr.length);
+				 console.log(_newErrArr.join(','));*/
 
 				_errHtml =  _newErrArr2.join(',');
 				//console.log(_errHtml);
@@ -115,7 +114,7 @@ $(function () {
 				}else {
 					//验证通过
 					ajaxForm();
-					document.getElementById('myForm').submit();
+					//document.getElementById('myForm').submit();
 				}
 			}
 
@@ -127,7 +126,7 @@ $(function () {
 				errInfo.fadeOut('fast').fadeIn('fast');
 			}else {
 				ajaxForm();
-				form.submit();
+				//form.submit();
 			}
 
 		}
@@ -136,19 +135,13 @@ $(function () {
 
 	// 在JS中，函数和变量都会自动提升
 	function ajaxForm() {
-		var _importUser = $('input#username');
-		var _importPass = $('input#pass');
-		var username = $.trim(_importUser.val());
-		var pass = $.trim(_importPass.val());
-
-		//alert(username);
-		//alert(pass);
-        //alert(location.pathname);
+		//alert(location.pathname);
 
 		$.ajax({
+			cache: false,
 			url: location.pathname + 'test.php',
-			type: 'GET',
-			data: {username: username, password:pass},
+			type: 'POST',
+			data: $('#myForm').serialize(),
 			error: function (xhr, errText) {
 				alert('错误');
 				console.log('错误：' + errText);
@@ -164,10 +157,6 @@ $(function () {
 
 
 });
-
-
-
-
 
 
 

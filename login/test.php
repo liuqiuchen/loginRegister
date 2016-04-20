@@ -1,7 +1,7 @@
 <?php
 
-$username = $_GET['username'];
-$pass = $_GET['pass'];
+$username = $_POST['username'];
+$pass = $_POST['pass'];
 
 
 
