@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Microsoft Yahei';
+    font-size: 14px;
+    color: #666666;
+}
+
+#main {
+    width: 768px;
+    height: 762px;
+    background: #f3f3f3;
+    margin: 50px auto 0 auto;
+}
+
+#main #myForm {
+    padding: 35px 0 0 100px;
+}
+
+#main #myForm h1 {
+    font-size: 26px;
+    color: #666666;
+    margin-bottom: 35px;
+}
+
+#main #myForm label.text_label {
+    display: block;
+    width: 100px;
+    height: 30px;
+    color: #333333;
+}
+
+#main #myForm input.import_item {
+    margin-left: 100px;
+    width: 220px;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    border: 1px solid #cccccc;
+    text-indent: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#main #myForm .field {
+    margin-bottom: 30px;
+}
+
+#main #myForm span#get_code_btn {
+    display: inline-block;
+    padding: 8px;
+    color: #cccccc;
+    background: #FFFFFF;
+    margin-left: 10px;
+}
+
+#main #myForm span#get_code_btn:hover {
+    color: #b2b2b2;
+    cursor: pointer;
+}
+
+#main #myForm #submit_btn {
+    width: 220px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #ff7a40;
+    margin: 50px 0 0 100px;
+    cursor: pointer;
+}
+
+.form_err {
+    color: rgb(255, 122, 64);
+    margin-left: 10px;
+}
+
+.form_err[for='code'] {
+    float: right;
+    line-height: 36px;
+}
+
+#main #myForm .code_field {
+    width: 550px;
+    height: 72px;
+}
+
+#main #myForm #code {
+    float: left;
+}
+
+#main  #myForm #get_code_btn {
+    float: left;
+    display: inline-block;
+    margin-top: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
