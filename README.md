@@ -17,7 +17,7 @@ Download Zip包时，请在wamp服务器上运行此代码
 * [登录](http://liuqiuchen.github.io/loginRegister/login/)
 * [http://liuqiuchen.github.io/loginRegister/login/](http://liuqiuchen.github.io/loginRegister/login/)
  <br/>
-* [注册]
+* [注册](http://liuqiuchen.github.io/loginRegister/register/)
 * [http://liuqiuchen.github.io/loginRegister/register/](http://liuqiuchen.github.io/loginRegister/register/)
 
 ####再次好意提醒
