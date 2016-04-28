@@ -51,12 +51,9 @@
 #main #myForm span#get_code_btn {
     display: inline-block;
     padding: 8px;
-    color: #cccccc;
     background: #FFFFFF;
     margin-left: 10px;
-}
-
-#main #myForm span#get_code_btn:hover {
+    /*color: #cccccc;*/
     color: #b2b2b2;
     cursor: pointer;
 }
