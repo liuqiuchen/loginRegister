@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>注册</title>
+    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/jquery-ui.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
     <!--[if IE 7]>
     <link rel="stylesheet" href="css/style_ie7.css"/>
@@ -14,24 +15,24 @@
     <form id="myForm" method="post" action="test.php">
         <h1>用户注册</h1>
         <div class="field">
-            <label class="text_label">用户名：</label>
+            <label class="text_label" for="username">用户名：</label>
             <input class="import_item" type="text" name="username" id="username" placeholder="!用户名在4~12位之间"/>
         </div>
         <div class="field">
-            <label class="text_label">密码：</label>
+            <label class="text_label" for="pass">密码：</label>
             <input class="import_item" type="password" name="pass" id="pass" placeholder="!密码在6~20位之间"/>
         </div>
         <div class="field">
-            <label class="text_label">确认密码：</label>
+            <label class="text_label" for="equalPass">确认密码：</label>
             <input class="import_item" type="password" name="equalPass" id="equalPass" placeholder="!确认和上框密码一致"/>
         </div>
         <div class="field code_field">
-            <label class="text_label">手机验证码：</label>
+            <label class="text_label" for="code">手机验证码：</label>
             <input class="import_item" type="text" name="code" id="code" placeholder="!请填写发送的手机的验证码"/>
             <span id="get_code_btn">获取验证码</span>
         </div>
         <div class="field">
-            <label class="text_label">绑定邮箱：</label>
+            <label class="text_label" for="email">绑定邮箱：</label>
             <input class="import_item" type="text" name="email" id="email" placeholder="!格式包含'@', '.', 'com/cn'"/>
         </div>
         <div class="field">
@@ -40,7 +41,9 @@
     </form>
 </div>
 
+
 <script src="../bower_components/jquery/jquery-1.12.3.min.js"></script>
+<script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script src="../bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="js/main.js"></script>
 

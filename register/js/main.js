@@ -172,6 +172,39 @@ codeBtn.click(function () {
 	}
 });
 
+	var email = $('#email');
+	var emailTips = [
+		'@qq.com',
+		'@mail.com',
+		'@sina.com.cn',
+		'@163.com'
+	];
+	var emailList = [];
+	var newEmailList1 = [];
+	var newEmailList2 = [];
+
+	// autoComplete插件，自动补全邮箱
+	email.on('keyup', function () {
+
+		for(var i = 0;i < emailTips.length;i++) {
+
+			emailList.push(email.val() + emailTips[i]);
+
+			//数组去重
+			for(var n in emailList) {
+				newEmailList1[emailList[n]] = n;
+			}
+
+		}
+
+		console.log(newEmailList1);
+
+		/*email.autocomplete({
+			source: newEmailList2
+		});*/
+
+	});
+
 
 
 });

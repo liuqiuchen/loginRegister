@@ -17,6 +17,7 @@
     "tests"
   ],
   "devDependencies": {
-    "jquery-validation": "jquery-validate#^1.15.0"
+    "jquery-validation": "jquery-validate#^1.15.0",
+    "jquery-ui": "^1.11.4"
   }
 }
