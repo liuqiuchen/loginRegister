@@ -172,6 +172,32 @@ codeBtn.click(function () {
 	}
 });
 
+
+	/**扩展Array的原型方法实现数组去重
+	 * 1.创建一个空数组和一个空对象
+	 * 2.循环遍历一下要去重的数组，如果和新数组里的元素不重复再放进去，
+	 * 并且不重复的元素作为对象obj的一个属性传入，复制为1*/
+	Array.prototype.removeRepeated = function () {
+		var arr = [];
+		var obj = {};
+
+		for(var i = 0;i < this.length;i++) {
+			if(!obj[this[i]]) {
+				arr.push(this[i]);
+				obj[this[i]] = 1;
+			}
+		}
+
+		return arr;
+	};
+
+//    var repeatedArr = [1,5,8,7,2,1,5,7];
+//    var newArr = repeatedArr.removeRepeated();
+//
+//    console.log(newArr); //[1, 5, 8, 7, 2]
+//    console.log(Array.isArray(newArr)); //true
+
+
 	var email = $('#email');
 	var emailTips = [
 		'@qq.com',
@@ -180,28 +206,30 @@ codeBtn.click(function () {
 		'@163.com'
 	];
 	var emailList = [];
-	var newEmailList1 = [];
-	var newEmailList2 = [];
+	var newEmailList = [];
+
 
 	// autoComplete插件，自动补全邮箱
 	email.on('keyup', function () {
 
 		for(var i = 0;i < emailTips.length;i++) {
+			//整除再清空一次
+			if(i / emailTips.length == 0) {
+				emailList = [];
+			}
 
 			emailList.push(email.val() + emailTips[i]);
 
 			//数组去重
-			for(var n in emailList) {
-				newEmailList1[emailList[n]] = n;
-			}
+			newEmailList = emailList.removeRepeated();
 
 		}
 
-		console.log(newEmailList1);
+		//console.log(newEmailList);
 
-		/*email.autocomplete({
-			source: newEmailList2
-		});*/
+		email.autocomplete({
+			source: newEmailList
+		});
 
 	});
 
