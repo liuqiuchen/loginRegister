@@ -177,19 +177,19 @@ codeBtn.click(function () {
 	 * 1.创建一个空数组和一个空对象
 	 * 2.循环遍历一下要去重的数组，如果和新数组里的元素不重复再放进去，
 	 * 并且不重复的元素作为对象obj的一个属性传入，复制为1*/
-	Array.prototype.removeRepeated = function () {
-		var arr = [];
-		var obj = {};
+Array.prototype.removeRepeated = function () {
+	var arr = [];
+	var obj = {};
 
-		for(var i = 0;i < this.length;i++) {
-			if(!obj[this[i]]) {
-				arr.push(this[i]);
+	for(var i = 0;i < this.length;i++) {
+		if(!obj[this[i]]) {
+			arr.push(this[i]);
 				obj[this[i]] = 1;
-			}
 		}
+	}
 
-		return arr;
-	};
+	return arr;
+};
 
 //    var repeatedArr = [1,5,8,7,2,1,5,7];
 //    var newArr = repeatedArr.removeRepeated();
