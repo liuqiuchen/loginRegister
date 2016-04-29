@@ -2,7 +2,7 @@ $(function () {
     var validator = null;
     var submitBtn = $('#submit_btn');
     var myForm = $('#myForm');
-	var codeBtn = $('#get_code_btn');
+    var codeBtn = $('#get_code_btn');
 
     // ie7以上浏览器
     if(submitBtn.get(0).hasAttribute != undefined) {
