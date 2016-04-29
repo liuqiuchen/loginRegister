@@ -75,7 +75,7 @@ submitBtn.click(function () {
 
 	// ie7浏览器
 	if($(this).get(0).hasAttribute == undefined) {
-		alert('ie7');
+		//alert('ie7');
 
         //简单表单验证
 
@@ -135,6 +135,30 @@ function ajaxForm() {
     });
 }
 
+// 获取验证码
+function getCode(obj, seconds, interval) {
+	if(obj.text() == '获取验证码') {
+		// get code
+		interval = setInterval(function () {
+
+			seconds--;
+
+			if(seconds == 0) {
+				clearInterval(interval);
+				obj.css({
+					'color': '#b2b2b2'
+				}).text('获取验证码');
+			}else {
+				obj.css({
+					'color': '#cccccc'
+				}).text(seconds + 's');
+			}
+
+		}, 1000);
+	}else {
+		alert('您正在获取验证码，请耐心等待...');
+	}
+}
 
 codeBtn.click(function () {
 	var username = $('#username');
@@ -144,32 +168,33 @@ codeBtn.click(function () {
 	var interval = null;
 	var seconds = 60;
 
-	if(username.valid() && pass.valid() && equalPass.valid()) {
-
-		if(_this.text() == '获取验证码') {
-			// get code
-			interval = setInterval(function () {
-
-				seconds--;
-
-				if(seconds == 0) {
-					clearInterval(interval);
-					_this.css({
-						'color': '#b2b2b2'
-					}).text('获取验证码');
-				}else {
-					_this.css({
-						'color': '#cccccc'
-					}).text(seconds + 's');
-				}
-
-			}, 1000);
-		}else {
-			alert('您正在获取验证码，请耐心等待...');
+	// ie7以上浏览器
+	if(submitBtn.get(0).hasAttribute != undefined) {
+		if(username.valid() && pass.valid() && equalPass.valid()) {
+			getCode(_this, seconds, interval);
 		}
+	}else {
+		// ie7
+		if($.trim(username.val()).length < 4) {
+			alert('用户名最少4位');
+		}else if ($.trim(username.val()).length > 12) {
+			alert('用户名最多12位');
+		}else {
+			if ($.trim(pass.val()).length < 6) {
+				alert('密码最少6位');
+			} else if ($.trim(pass.val()).length > 20) {
+				alert('密码最多20位');
+			} else {
+				if ($.trim(pass.val()) != $.trim(equalPass.val())) {
+					alert('两次密码输入不一致');
+				} else {
+					getCode(_this, seconds, interval);
+				}
+			}
 
-
+		}
 	}
+
 });
 
 
